@@ -4,7 +4,7 @@ from skimage.measure import regionprops,label
 from skimage.filters import sobel, threshold_otsu
 from scipy.ndimage import binary_fill_holes
 
-def isPensil(region, size):
+def isPencil(region, size):
     cy,cx = region.centroid_local
     cx/=region.image.shape[1]
     cy/=region.image.shape[0]
@@ -29,7 +29,7 @@ for i in range(1,13):
     count = 0
     size=np.min(labeled.shape)
     for region in regions[-10:]:
-        count += isPensil(region, size)
+        count += isPencil(region, size)
     print(f'На {i} изображении {count} карандашей')
     count_all+= count
 print(f'На всех изображениях {count_all} карандашей')
