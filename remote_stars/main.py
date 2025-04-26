@@ -2,9 +2,6 @@ import matplotlib.pyplot as plt
 import socket 
 import numpy as np
 
-mask = np.array([[0,0,0],
-                 [0,1,0],
-                 [0,0,0]])
 
 host = "84.237.21.36"
 port = 5152
